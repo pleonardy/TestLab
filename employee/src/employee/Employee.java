@@ -14,6 +14,16 @@ import java.io.*;
  */
 
 //This class check the author enter the number or 
+class bufferedReaderJustForTestDeduplication
+{
+	BufferredReader getBufferedReader(String fname)
+	{
+		   FileInputStream fstream = new FileInputStream(fname);
+		   // Get the object of DataInputStream
+		   DataInputStream in = new DataInputStream(fstream);
+		   getBufferedReader = new BufferedReader(new InputStreamReader(in));
+	}
+}
 
 class fileread3
 {
@@ -23,10 +33,8 @@ class fileread3
         try{
    // Open the file that is the first 
    // command line parameter
-   FileInputStream fstream = new FileInputStream(fname);
-   // Get the object of DataInputStream
-   DataInputStream in = new DataInputStream(fstream);
-   BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+   BufferedReader br = getBufferedReader(fname);
    String strLine;
    //Read File Line By Line
    int k=0;
@@ -60,10 +68,7 @@ class fileread2
         try{
    // Open the file that is the first 
    // command line parameter
-   FileInputStream fstream = new FileInputStream(fname);
-   // Get the object of DataInputStream
-   DataInputStream in = new DataInputStream(fstream);
-   BufferedReader br = new BufferedReader(new InputStreamReader(in));
+   BufferedReader br = getBufferedReader(fname);
    String strLine;
    //Read File Line By Line
    int k=0;
@@ -104,10 +109,7 @@ class fileread
         try{
    // Open the file that is the first 
    // command line parameter
-   FileInputStream fstream = new FileInputStream(fname);
-   // Get the object of DataInputStream
-   DataInputStream in = new DataInputStream(fstream);
-   BufferedReader br = new BufferedReader(new InputStreamReader(in));
+   BufferedReader br = getBufferedReader(fname);
    String strLine;
    //Read File Line By Line
    int k=0;
